@@ -76,7 +76,7 @@ def linear_complexity_test(bits, m=500):
     return chi_squared, p_value
 
 def evaluate_cipher(cipher_design, name, master_key):
-    print(f"=== Avaliando Cifra: {name} ===")
+    print(f"\n----> Teste de BALANCEAMENTO para {cipher_design.NAME}:")
     
     # Define o tamanho correto do bloco em bits (80 para SPN, 40 para Feistel)
     block_len = 40 if "Feistel" in name or "f" in name.lower() else 80
