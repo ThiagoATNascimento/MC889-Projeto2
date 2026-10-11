@@ -2,7 +2,7 @@
 
 from collections.abc import Sequence
 
-from cipher_base import (
+from encrypt.cipher_base import (
     BLOCK_SIZE,
     NIBBLE_SIZE,
     SPN_ROUNDS,

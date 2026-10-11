@@ -2,7 +2,7 @@
 
 from collections.abc import Sequence
 
-from cipher_base import (
+from encrypt.cipher_base import (
     FEISTEL_ROUNDS,
     HALF_MASK,
     HALF_SIZE,
