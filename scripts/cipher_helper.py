@@ -8,10 +8,10 @@ class BlockEncryption:
     def __init__(self, c: int, m: int):
         self.c = c
         self.m = m
-        self.c_b = f"0b{c:b}"
-        self.m_b = f"0b{m:b}"
-        self.c_hex = f"0x{c:x}"
-        self.m_hex = f"0x{m:x}"
+        self.c_b = f"0b{c:0{block_bytes*8}b}"
+        self.m_b = f"0b{m:0{block_bytes*8}b}"
+        self.c_hex = f"0x{c:0{block_bytes*2}x}"
+        self.m_hex = f"0x{m:0{block_bytes*2}x}"
 
 
 def block_from_str(block_text: str) -> int:
