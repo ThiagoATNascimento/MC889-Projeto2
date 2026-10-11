@@ -15,3 +15,5 @@ MASTER_KEY: int = 0x0000000000000000
 
 # para lógica do helper encrypt
 SPEC = "feistel"
+
+NAME = "Feistel F07"

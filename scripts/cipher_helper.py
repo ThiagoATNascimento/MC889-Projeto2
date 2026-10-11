@@ -8,10 +8,17 @@ class BlockEncryption:
     def __init__(self, c: int, m: int):
         self.c = c
         self.m = m
-        self.c_b = f"0b{c:0{block_bytes*8}b}"
-        self.m_b = f"0b{m:0{block_bytes*8}b}"
+        self.c_b = f"0b{c:0{BLOCK_SIZE}b}"
+        self.m_b = f"0b{m:0{BLOCK_SIZE}b}"
         self.c_hex = f"0x{c:0{block_bytes*2}x}"
         self.m_hex = f"0x{m:0{block_bytes*2}x}"
+
+    def c_bit_count(self) -> tuple[int, int]:
+        """
+            Retorn count_0, count_1
+        """
+        count_1 = self.c.bit_count()
+        return BLOCK_SIZE - count_1, count_1
 
 
 def block_from_str(block_text: str) -> int:
