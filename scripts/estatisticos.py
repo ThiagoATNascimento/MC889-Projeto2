@@ -15,7 +15,7 @@ def main():
 
     # bloco
     m2 = 0b11000110101010010110101
-    enc2 = encrypt_block(m1, cipher_design, master_key)
+    enc2 = encrypt_block(m2, cipher_design, master_key)
     print(f"m2 = {enc2.m_hex}")
     print(f"c2 = {enc2.c_hex}")
     print(f"m2 = {enc2.m_b}")
@@ -23,7 +23,7 @@ def main():
 
     # bloco
     m3 = m2 + 1
-    enc3 = encrypt_block(m1, cipher_design, master_key)
+    enc3 = encrypt_block(m3, cipher_design, master_key)
     print(f"m3 = {enc3.m_hex}")
     print(f"c3 = {enc3.c_hex}")
     print(f"m3 = {enc3.m_b}")
