@@ -1,0 +1,121 @@
+12 blocos, bytes válidos no último: 1
+Célula (i, j) = m_i ^ m_j  ('.' = byte não imprimível)
+
+      | m0         | m1         | m2         | m3         | m4         | m5         | m6         | m7         | m8         | m9         | m10        | m11        
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+m0    | -          | /E...EG... | n...<E...N | )..r3....N | 7..#.O..N  | +...rG.... | n..2rA.... | *E.l...... | <.Q%.UG!.. | +.V..N..N. | /..<.O.O.. | 7          
+m1    | /E...EG... | -          | AU..8.V..U | .O..7EL..U | .O....W.O; | .V.Hv.O... | AR..v.R... | .....ED... | .TG....7.. | .R@_..N.O. | .K....UY.. | .          
+m2    | n...<E...N | AU..8.V..U | -          | G....E.... | Y...*...Rn | E..RN....A | ....N....N | DU..*E...E | R.W.!.V+.V | E.PE!...RM | A...7..E.R | Y          
+m3    | )..r3....N | .O..7EL..U | G....E.... | -          | ...Q%O..Tn | ....AG...A | G..@AA...N | .O..%....E | ..IW.UL+.V | ..N..N..TM | ...N8O.E.R | .          
+m4    | 7..#.O..N  | .O....W.O; | Y...*...Rn | ...Q%O..Tn | -          | ....d...N/ | Y...d...U  | .O.O.O..S+ | ..U...W E8 | ..R......# | .......NC< | .          
+m5    | +...rG.... | .V.Hv.O... | E..RN....A | ....AG...A | ....d...N/ | -          | E......... | .V..dG.... | ..B.o.O .. | ..E.o...N. | ....y..N.. | .          
+m6    | n..2rA.... | AR..v.R... | ....N....N | G..@AA...N | Y...d...U  | E......... | -          | DR.^dA.... | R.U.o.R!.. | E.R.o...U. | A...y..O.. | Y          
+m7    | *E.l...... | .....ED... | DU..*E...E | .O..%....E | .O.O.O..S+ | .V..dG.... | DR.^dA.... | -          | .TFI.UD+.. | .RA..N..S. | .K.P.O.E.. | .          
+m8    | <.Q%.UG!.. | .TG....7.. | R.W.!.V+.V | ..IW.UL+.V | ..U...W E8 | ..B.o.O .. | R.U.o.R!.. | .TFI.UD+.. | -          | ......N/E. | ..B...Un.. | .          
+m9    | +.V..N..N. | .R@_..N.O. | E.PE!...RM | ..N..N..TM | ..R......# | ..E.o...N. | E.R.o...U. | .RA..N..S. | ......N/E. | -          | ..E....AC. | .          
+m10   | /..<.O.O.. | .K....UY.. | A...7..E.R | ...N8O.E.R | .......NC< | ....y..N.. | A...y..O.. | .K.P.O.E.. | ..B...Un.. | ..E....AC. | -          | .          
+m11   | 7          | .          | Y          | .          | .          | .          | Y          | .          | .          | .          | .          | -          
+confiança por coluna (margem do 1º p/ 2º candidato; baixa = duvidoso):
+  0:  4.4 1:  7.1 2:  0.0 3:  0.0 4:  0.0 5: 18.2 6:  7.2 7:  5.6 8: 10.3 9: 15.0
+
+plaintext estimado (· = não imprimível, ? = coluna de baixa confiança):
+  m0  |Ne??? gonn|
+  m1  |a ???e you|
+  m2  | u???ever |
+  m3  |go??? let |
+  m4  |yo???own N|
+  m5  |ev???gonna|
+  m6  | r???aroun|
+  m7  |d ??? dese|
+  m8  |rt???u Nev|
+  m9  |er???nna m|
+  m10 |ak???ou cr|
+  m11 |y|
+
+texto contínuo:
+Ne??? gonna ???e you u???ever go??? let yo???own Nev???gonna r???around ??? desert???u Never???nna mak???ou cry
+
+top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
+  col 0 x=0x4e score=   13.9  Na g
+  col 0 x=0x59 score=    9.4  Yv7p
+  col 0 x=0x42 score=    5.1  Bm,k
+
+  col 1 x=0x65 score=   17.2  e uo
+  col 1 x=0x63 score=   10.1  c&si
+  col 1 x=0x7e score=    7.7  ~;nt
+
+
+
+
+  col 5 x=0x20 score=   23.5   ee 
+  col 5 x=0x26 score=    5.3  &cc&
+  col 5 x=0x6f score=    4.9  o**o
+
+  col 6 x=0x67 score=   13.3  g vl
+  col 6 x=0x64 score=    6.1  d#uo
+  col 6 x=0x66 score=    5.8  f!wm
+
+  col 7 x=0x6f score=   17.9  oyee
+  col 7 x=0x64 score=   12.3  drnn
+  col 7 x=0x65 score=   11.9  esoo
+
+  col 8 x=0x6e score=   21.1  nort
+  col 8 x=0x6f score=   10.7  onsu
+  col 8 x=0x68 score=    8.5  hitr
+
+  col 9 x=0x6e score=   18.5  nu  
+  col 9 x=0x6f score=    3.5  ot!!
+  col 9 x=0x6a score=    3.0  jq$$
+
+confiança por coluna (margem do 1º p/ 2º candidato; baixa = duvidoso):
+  0:  4.4 1:  7.1 2:  0.0 3:  0.0 4:  0.0 5: 18.2 6:  7.2 7:  5.6 8: 10.3 9: 15.0
+
+plaintext estimado (· = não imprimível, ? = coluna de baixa confiança):
+  m0  |Ne??? gonn|
+  m1  |a ???e you|
+  m2  | u???ever |
+  m3  |go??? let |
+  m4  |yo???own N|
+  m5  |ev???gonna|
+  m6  | r???aroun|
+  m7  |d ??? dese|
+  m8  |rt???u Nev|
+  m9  |er???nna m|
+  m10 |ak???ou cr|
+  m11 |y|
+
+texto contínuo:
+Ne??? gonna ???e you u???ever go??? let yo???own Nev???gonna r???around ??? desert???u Never???nna mak???ou cry
+
+top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
+  col 0 x=0x4e score=   13.9  Na g
+  col 0 x=0x59 score=    9.4  Yv7p
+  col 0 x=0x42 score=    5.1  Bm,k
+
+  col 1 x=0x65 score=   17.2  e uo
+  col 1 x=0x63 score=   10.1  c&si
+  col 1 x=0x7e score=    7.7  ~;nt
+
+
+
+
+  col 5 x=0x20 score=   23.5   ee 
+  col 5 x=0x26 score=    5.3  &cc&
+  col 5 x=0x6f score=    4.9  o**o
+
+  col 6 x=0x67 score=   13.3  g vl
+  col 6 x=0x64 score=    6.1  d#uo
+  col 6 x=0x66 score=    5.8  f!wm
+
+  col 7 x=0x6f score=   17.9  oyee
+  col 7 x=0x64 score=   12.3  drnn
+  col 7 x=0x65 score=   11.9  esoo
+
+  col 8 x=0x6e score=   21.1  nort
+  col 8 x=0x6f score=   10.7  onsu
+  col 8 x=0x68 score=    8.5  hitr
+
+  col 9 x=0x6e score=   18.5  nu  
+  col 9 x=0x6f score=    3.5  ot!!
+  col 9 x=0x6a score=    3.0  jq$$
+

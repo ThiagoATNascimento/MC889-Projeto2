@@ -34,7 +34,7 @@ def block_anal_bytes(block: int, nbytes: int = BLOCK_BYTES) -> str:
 
 def main():
 
-    idx = 3
+    idx = 4
     c_all, total_bits = CI[idx], N_BITS[idx]
     total_bytes = total_bits // 8
 
@@ -84,7 +84,7 @@ def main():
     show_solution(plain, conf, ranking, d, n)
 
     # depois de ler o resultado, force o que você tem certeza:
-    hh = "I just wan"
+    hh = ""
     hints = {}#{(1,4): ord('c'), (1,5): ord('o'), (1,6): ord('n'), (1,7): ord('d'), (1,8): ord('e'), (1, 9): ord('n'), (2, 0): ord('a'), (2, 1): ord('d')}
     for i in range(len(hh)):
         cc = hh[i]
