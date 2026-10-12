@@ -434,7 +434,7 @@ Com a tabela exata, o solver já devolveu texto legível nas mensagens longas. N
 
 | Msg | Blocos | Texto recuperado |
 |---|---|---|
-| 0 | 4 |  |
+| 0 | 4 | É preciso imaginar Sísifo feliz. |
 | 1 | 5 | A alma tinge-se com a cor de seus pensamentos |
 | 2 | 5 | Sem nenhuma mensagem para ser encontrada por aqui. |
 | 3 | 6 | No Counter Mode a cifra de bloco vira cifra de fluxo. |
