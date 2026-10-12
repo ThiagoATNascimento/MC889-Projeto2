@@ -494,5 +494,5 @@ Todas são trechos da música. Me pergunto o quão mais sofrido seria ter que de
 
 ## Referências / Anexos
 
-1. Slides da disciplina MC889 (testes de balanceamento e de pares de bits).
+1. Slides da Aula 03 da disciplina MC889 (testes de balanceamento e de pares de bits).
 2. L. Bassham et al., *A Statistical Test Suite for Random and Pseudorandom Number Generators for Cryptographic Applications*, NIST SP 800-22 Rev. 1a, 2010.
