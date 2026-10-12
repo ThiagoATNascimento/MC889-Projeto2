@@ -1,0 +1,76 @@
+11 blocos, bytes válidos no último: 7
+Célula (i, j) = m_i ^ m_j  ('.' = byte não imprimível)
+
+      | m0         | m1         | m2         | m3         | m4         | m5         | m6         | m7         | m8         | m9         | m10        
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+m0    | -          | =...D.EOR. | !...HOOOx) | .U..D.O.SF | %.....SOE. | %....OOOT. | )..N..MOQ. | 4U....U... | q.....S... | 4.....I... | q......    
+m1    | =...D.EOR. | -          | .....S..** | >U.....I.E | ....H..... | ....AS.... | ...OS..... | .U..N..... | L...C..ER. | ....B..RR. | L...V.K    
+m2    | !...HOOOx) | .....S..** | -          | "E...D.I+o | ....DO..=! | ....M...,* | ...E_E..): | .E..BG..." | P...OI.Ex+ | ....NR.Rx. | P...ZEA    
+m3    | .U..D.O.SF | >U.....I.E | "E...D.I+o | -          | &R..H..I.N | &R..AD.I.E | *T.ES..I.U | 7...N....M | rP..C...SD | 7S..B...SA | rC..V.A    
+m4    | %.....SOE. | ....H..... | ....DO..=! | &R..H..I.N | -          | .....O.... | ...C...... | .R........ | T......EE. | .......RE. | T.....]    
+m5    | %....OOOT. | ....AS.... | ....M...,* | &R..AD.I.E | .....O.... | -          | ...G.E.... | .R...G.... | T....I.ET. | .....R.RT. | T....EA    
+m6    | )..N..MOQ. | ...OS..... | ...E_E..): | *T.ES..I.U | ...C...... | ...G.E.... | -          | .T.I...... | X..E...EQ. | ...O...RQ. | X..A..C    
+m7    | 4U....U... | .U..N..... | .E..BG..." | 7...N....M | .R........ | .R...G.... | .T.I...... | -          | EP........ | .S........ | EC....[    
+m8    | q.....S... | L...C..ER. | P...OI.Ex+ | rP..C...SD | T......EE. | T....I.ET. | X..E...EQ. | EP........ | -          | E......... | ......]    
+m9    | 4.....I... | ....B..RR. | ....NR.Rx. | 7S..B...SA | .......RE. | .....R.RT. | ...O...RQ. | .S........ | E......... | -          | E.....G    
+m10   | q......    | L...V.K    | P...ZEA    | rC..V.A    | T.....]    | T....EA    | X..A..C    | EC....[    | ......]    | E.....G    | -          
+confiança por coluna (margem do 1º p/ 2º candidato; baixa = duvidoso):
+  0:  7.6 1:  8.9 2:  5.6 3:  8.2 4:  9.3 5: 11.8 6: 11.7 7:  9.9 8: 11.5 9:  9.9
+
+plaintext estimado (· = não imprimível, ? = coluna de baixa confiança):
+  m0  |Quando o f|
+  m1  |luxo se re|
+  m2  |pete, o XO|
+  m3  |R de dois |
+  m4  |trechos en|
+  m5  |trega o te|
+  m6  |xto sem qu|
+  m7  |e ningu··m|
+  m8  | precise d|
+  m9  |escobrir a|
+  m10 | chave.|
+
+texto contínuo:
+Quando o fluxo se repete, o XOR de dois trechos entrega o texto sem que ningu··m precise descobrir a chave.
+
+top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
+  col 0 x=0x51 score=   13.1  QlpR
+  col 0 x=0x40 score=    5.5  @}aC
+  col 0 x=0x44 score=    4.6  DyeG
+
+  col 1 x=0x75 score=   19.7  uue 
+  col 1 x=0x64 score=   10.7  ddt1
+  col 1 x=0x73 score=   10.3  ssc&
+
+  col 2 x=0x61 score=   15.8  axtd
+  col 2 x=0x60 score=   10.2  `yue
+  col 2 x=0x67 score=    9.6  g~rb
+
+  col 3 x=0x6e score=   21.8  noee
+  col 3 x=0x64 score=   13.5  deoo
+  col 3 x=0x68 score=   12.5  hicc
+
+  col 4 x=0x64 score=   14.9  d , 
+  col 4 x=0x63 score=    5.6  c'+'
+  col 4 x=0x62 score=    2.9  b&*&
+
+  col 5 x=0x6f score=   21.9  os d
+  col 5 x=0x69 score=   10.2  iu&b
+  col 5 x=0x6e score=    8.8  nr!e
+
+  col 6 x=0x20 score=   20.7   eoo
+  col 6 x=0x21 score=    9.1  !dnn
+  col 6 x=0x3c score=    8.0  <yss
+
+  col 7 x=0x6f score=   21.3  o  i
+  col 7 x=0x2a score=   11.4  *ee,
+  col 7 x=0x20 score=    8.3   oo&
+
+  col 8 x=0x20 score=   13.8   rXs
+  col 8 x=0x37 score=    2.3  7eOd
+  col 8 x=0x30 score=    0.7  0bHc
+
+  col 9 x=0x66 score=   16.4  feO 
+  col 9 x=0x67 score=    6.5  gdN!
+  col 9 x=0x6e score=    5.6  nmG(
+
