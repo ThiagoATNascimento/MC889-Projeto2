@@ -61,55 +61,35 @@ top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
   col 9 x=0x3d score=    2.8  = n·
 
 confiança por coluna (margem do 1º p/ 2º candidato; baixa = duvidoso):
-  0:  2.8 1:  3.0 2:  0.2 3:  3.9 4:  0.6 5:  3.9 6:  0.4 7:  3.0 8:  0.7 9:  3.2
+  0:  inf 1:  inf 2:  inf 3:  inf 4:  inf 5:  inf 6:  inf 7:  inf 8:  inf 9:  inf
 
 plaintext estimado (· = não imprimível, ? = coluna de baixa confiança):
-  m0  |???o?e???s|
-  m1  |??? ?o???n|
-  m2  |??? ? ??? |
-  m3  |???r?|
+  m0  |O homem es|
+  m1  |t·· conden|
+  m2  |ado a ser |
+  m3  |livre|
 
 texto contínuo:
-O soael est·· ooodenadt m rer limri
+O homem est·· condenado a ser livre
 
 top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
   col 0 x=0x4f score=    5.4  Otal
-  col 0 x=0x4d score=    2.6  Mvcn
-  col 0 x=0x4b score=    2.4  Kpeh
 
   col 1 x=0x20 score=    4.8   ·di
-  col 1 x=0x69 score=    1.8  i·- 
-  col 1 x=0x2c score=    1.6  ,·he
 
-  col 2 x=0x73 score=    3.4  s·tm
-  col 2 x=0x6e score=    3.1  n·ip
-  col 2 x=0x72 score=    3.1  r·ul
+  col 2 x=0x68 score=    1.5  h·ov
 
   col 3 x=0x6f score=    9.8  o  r
-  col 3 x=0x20 score=    5.8   oo=
-  col 3 x=0x3d score=    4.8  =rr 
 
-  col 4 x=0x61 score=    8.0  aomi
   col 4 x=0x6d score=    7.5  mcae
-  col 4 x=0x69 score=    6.8  igea
 
   col 5 x=0x65 score=    7.6  eo ·
-  col 5 x=0x20 score=    3.7   *eP
-  col 5 x=0x2a score=    3.5  * oZ
 
-  col 6 x=0x6c score=    5.2  lor5
   col 6 x=0x6d score=    4.8  mns4
-  col 6 x=0x70 score=    4.3  psn)
 
   col 7 x=0x20 score=    6.7   de·
-  col 7 x=0x65 score=    3.7  e! ·
-  col 7 x=0x64 score=    2.6  d !·
 
   col 8 x=0x65 score=    6.7  eer·
-  col 8 x=0x72 score=    6.0  rre·
-  col 8 x=0x61 score=    5.5  aav·
 
   col 9 x=0x73 score=    6.2  sn ·
-  col 9 x=0x20 score=    3.0   =s·
-  col 9 x=0x3d score=    2.8  = n·
 

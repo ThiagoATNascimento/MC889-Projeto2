@@ -63,54 +63,38 @@ top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
   col 9 x=0xe4 score=    1.6  ·<n 
 
 confiança por coluna (margem do 1º p/ 2º candidato; baixa = duvidoso):
-  0:  1.4 1:  1.1 2:  0.7 3:  5.7 4:  1.0 5:  2.4 6:  inf 7:  0.0 8:  0.0 9:  3.2
+  0:  inf 1:  inf 2:  inf 3:  inf 4:  inf 5:  inf 6:  3.0 7:  inf 8:  inf 9:  inf
 
 plaintext estimado (· = não imprimível, ? = coluna de baixa confiança):
-  m0  |???n??)??·|
-  m1  |???a??h??r|
-  m2  |???e??·?? |
-  m3  |???o??,??n|
-  m4  |???a?|
+  m0  |Transp?r··|
+  m1  |ncia e?ver|
+  m2  |dade n?·o |
+  m3  |s··o i?··n|
+  m4  |ticas|
 
 texto contínuo:
-Uransp)e··ocia ehaoreade n··e r··o i,··nuicas
+Transpar··ncia e verdade n··o s··o id··nticas
 
 top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
-  col 0 x=0x55 score=    7.4  Uoer
-  col 0 x=0x53 score=    6.0  Sict
   col 0 x=0x54 score=    5.7  Tnds
 
   col 1 x=0x72 score=    6.0  rca·
-  col 1 x=0x74 score=    4.9  teg·
-  col 1 x=0x7e score=    3.3  ~om·
 
   col 2 x=0x61 score=    5.6  aid·
-  col 2 x=0x6d score=    4.9  meh·
-  col 2 x=0x6c score=    4.7  ldi·
 
   col 3 x=0x6e score=   11.4  naeo
-  col 3 x=0x62 score=    5.7  bmic
-  col 3 x=0x66 score=    5.0  fimg
 
   col 4 x=0x73 score=   12.1  s   
-  col 4 x=0x20 score=   11.0   sss
-  col 4 x=0x32 score=    5.2  2aaa
 
   col 5 x=0x70 score=    6.8  peni
-  col 5 x=0x74 score=    4.4  tajm
-  col 5 x=0x7a score=    3.9  zodc
 
-  col 6 x=0x29 score=   -2.4  )h·,
+  col 6 x=0x61 score=    5.5  a ·d
+  col 6 x=0x20 score=    2.5   a·%
+  col 6 x=0x25 score=    1.4  %d· 
 
-  col 7 x=0x65 score=    2.6  ea··
-  col 7 x=0x61 score=    2.6  ae··
-  col 7 x=0x6d score=    0.8  mi··
+  col 7 x=0x72 score=   -0.2  rv··
 
-  col 8 x=0xc9 score=    2.3  ·oe·
   col 8 x=0xc3 score=    2.3  ·eo·
-  col 8 x=0xc8 score=    0.6  ·nd·
 
   col 9 x=0xaa score=    5.0  ·r n
-  col 9 x=0xf8 score=    1.8  · r<
-  col 9 x=0xe4 score=    1.6  ·<n 
 

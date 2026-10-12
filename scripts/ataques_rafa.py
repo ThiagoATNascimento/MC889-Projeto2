@@ -39,7 +39,7 @@ def main():
         """Parte linear da cifra: L(d) = E(d) ^ E(0). Independe da chave."""
         return enc.encrypt_block(d) ^ e0
 
-    idx = 3
+    idx = 0
     c_all, total_bits = CI[idx], N_BITS[idx]
     total_bytes = total_bits // 8
 
@@ -89,7 +89,16 @@ def main():
     show_solution(plain, conf, ranking, d, n)
 
     # depois de ler o resultado, force o que você tem certeza:
-    hints = {(0, 1): ord(' '), (0, 6): ord('e')}
+    hh = "Comer......... "
+    hints = {}#{(1,4): ord('c'), (1,5): ord('o'), (1,6): ord('n'), (1,7): ord('d'), (1,8): ord('e'), (1, 9): ord('n'), (2, 0): ord('a'), (2, 1): ord('d')}
+    for i in range(len(hh)):
+        cc = hh[i]
+        if cc == '.':
+            continue
+        if cc == "*":
+            cc = '.'
+
+        hints[(i//10, i%10)] = ord(cc)
     plain, conf, ranking, d = solve_columns(xors, valid, n, hints=hints)
     show_solution(plain, conf, ranking, d, n)
 
