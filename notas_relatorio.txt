@@ -2,3 +2,21 @@
 - Mostrar exemplos de entradas mudando apenas um bit e suas saídas
 
 - Falar da possibilidade de um fácil distinguidor
+
+sobre as tentativas de ataque:
+
+encontrar palavras específicas se mostrou ineficiente, teria que decriptar tudo com todas as chaves, citar a tentativa de usar artigos comuns (a, o, e, da, etc)
+e possíveis palavras envolvidas na mensagem (UNICAMP, maiusculo ou minusculo, MC889, Hello, World)
+
+tentamos usar o padrão do ASCII do primeiro bit de um caracter ser 0, mas como o texto provavelmente está em português, a chance de haver acentos ou "ç",
+falar sobre o retorno ser a chave trivial 0, que não pode e nem fez sentido, mas era a única que satisfazia o sistema de equação
+
+talvez seja legal falar que pela S-box da s07 e f07 serem iguais, supomos que elas são da mesma pessoa, e que isso poderia ser algo a ser explorado, já que
+compartilham a mesma chave, mas na primeira falha (caiu no caso de achar palavras), resolvemos abandonar essa abordagem depois de concluirmos que poderia se
+tratar de uma vantagem indevida
+
+o maior impedimento para explorar as vunerabilidades da construção de cada cifra foi o desconhecimento sobre um par mensagem/criptograma, ou de informações 
+relevantes sobre as mensagens ou chave, no caso, estarmos atuando como um atacante COA (Ciphertext-Only Attack)
+
+acho que na parte dos testes isso vai ser citado, mas a construção da s07 e f07, mesmo ambas tendo funções auxiliares semelhantes e fracas, a natureza da rede 
+de feistel tornou a f07 mais forte que a s07
