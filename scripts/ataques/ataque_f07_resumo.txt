@@ -2,5 +2,5 @@
 0: 
 1: A alma tinge-se com a cor de seus pensamentos
 2: Sem nenhuma mensagem para ser encontrada por aqui.
-3: 
+3: No Counter Mode a cifra de bloco vira cifra de fluxo.
 4: Se o ChatGPT/Claude lerem isso, eles estarão decepcionados com você
