@@ -33,14 +33,12 @@ def berlekamp_massey(block):
 def linear_complexity_test(bits, m=500):
     """
     Teste de Complexidade Linear - NIST SP 800-22 (Seção 2.10).
+    Requer uma sequência grande de bits (N >= 1.000.000) para validade estatística.
     """
     n = len(bits)
-    if n < m:
-        m = n
-        
     num_blocks = n // m
     if num_blocks < 1:
-        raise ValueError("Quantidade de bits insuficiente para realizar o teste.")
+        raise ValueError("Quantidade de bits insuficiente para realizar o teste com o M especificado.")
     
     # Probabilidades teóricas para M = 500 (NIST SP 800-22)
     pi = [0.01047, 0.03125, 0.12500, 0.31250, 0.31250, 0.15625, 0.05208]
@@ -73,19 +71,27 @@ def linear_complexity_test(bits, m=500):
             
     p_value = math.exp(-chi_squared / 2.0) if chi_squared > 0 else 1.0
     
-    return chi_squared, p_value
+    return chi_squared, p_value, num_blocks
 
 def evaluate_cipher(cipher_design, name, master_key):
-    print(f"\n----> Teste de BALANCEAMENTO para {cipher_design.NAME}:")
+    print(f"=== Avaliando Cifra: {name} ===")
     
     # Define o tamanho correto do bloco em bits (80 para SPN, 40 para Feistel)
     block_len = 40 if "Feistel" in name or "f" in name.lower() else 80
     
+    # Meta de 1.000.000 de bits exigida pelo NIST SP 800-22
+    target_bits = 1_000_000
+    num_messages = math.ceil(target_bits / block_len)
+    
+    print(f"Gerando {num_messages} blocos para acumular >= {target_bits} bits...")
+    
     bit_stream = []
-    for i in range(30):
+    for i in range(num_messages):
+        # Mensagem gerada de forma incremental
         m = 0b11000110101010010110101 + i
         enc = encrypt_block(m, cipher_design, master_key)
         
+        # Mostra os primeiros exemplos apenas nos 3 primeiros blocos para inspeção visual
         if i < 3:
             print(f"[{name}] Bloco {i+1}:")
             print(f"  m = {enc.m_hex}")
@@ -93,7 +99,6 @@ def evaluate_cipher(cipher_design, name, master_key):
             print(f"  m (bin) = {enc.m_b}")
             print(f"  c (bin) = {enc.c_b}\n")
             
-        # Tratamento seguro da string binária removendo '0b' e aplicando zfill
         c_str = str(enc.c_b)
         if c_str.startswith("0b"):
             c_str = c_str[2:]
@@ -102,11 +107,14 @@ def evaluate_cipher(cipher_design, name, master_key):
         c_bits = [int(b) for b in c_str]
         bit_stream.extend(c_bits)
 
+    print(f"Total de bits coletados: {len(bit_stream)}")
+
     try:
-        block_size = min(500, len(bit_stream))
-        chi_stat, p_val = linear_complexity_test(bit_stream, m=block_size)
+        # Executando o teste com blocos de M = 500
+        chi_stat, p_val, blocks_used = linear_complexity_test(bit_stream, m=500)
         
         print(f"--- Resultado do Teste de Complexidade Linear ({name}) ---")
+        print(f"Sub-blocos analisados (M=500): {blocks_used}")
         print(f"Estatística Chi-quadrado: {chi_stat:.4f}")
         print(f"P-Value: {p_val:.4f}")
         
