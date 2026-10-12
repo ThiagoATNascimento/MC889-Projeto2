@@ -1,0 +1,83 @@
+4 blocos, bytes válidos no último: 10
+Célula (i, j) = m_i ^ m_j  ('.' = byte não imprimível)
+
+      | m0         | m1         | m2         | m3         
+----------------------------------------------------------
+m0    | -          | ~.U]..U... | *O.*..U... | y...2.U... 
+m1    | ~.U]..U... | -          | TTFw...... | ..Ts ..... 
+m2    | *O.*..U... | TTFw...... | -          | SO..*..... 
+m3    | y...2.U... | ..Ts ..... | SO..*..... | -          
+confiança por coluna (margem do 1º p/ 2º candidato; baixa = duvidoso):
+  0:  2.3 1:  2.5 2:  0.0 3:  0.0 4:  0.0 5:  0.1 6:  2.9 7:  0.5 8:  0.9 9:  2.0
+
+plaintext estimado (· = não imprimível, ? = coluna de baixa confiança):
+  m0  |??????????|
+  m1  |??????????|
+  m2  |??????????|
+  m3  |??????????|
+
+texto contínuo:
+????????????????????????????????????????
+
+top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
+  col 0 x=0x0a score=    4.4  ·t s
+  col 0 x=0x59 score=    2.1  Y's 
+  col 0 x=0x5e score=    1.0  ^ t'
+
+  col 1 x=0x6f score=    8.8  ot o
+  col 1 x=0x20 score=    6.4   ;o 
+  col 1 x=0x61 score=    4.5  az.a
+
+
+
+
+  col 5 x=0x6f score=    6.9  otmr
+  col 5 x=0x72 score=    6.8  ripo
+  col 5 x=0x74 score=    5.9  tovi
+
+  col 6 x=0x75 score=    9.9  u   
+  col 6 x=0x20 score=    7.0   uuu
+  col 6 x=0x34 score=    6.4  4aaa
+
+  col 7 x=0x6e score=    5.6  nvce
+  col 7 x=0x6c score=    5.0  ltag
+  col 7 x=0x68 score=    4.5  hpec
+
+  col 8 x=0x65 score=    7.9  eiot
+  col 8 x=0x63 score=    7.0  coir
+  col 8 x=0x64 score=    4.4  dhnu
+
+  col 9 x=0x72 score=    8.1  ruee
+  col 9 x=0x64 score=    6.1  dcss
+  col 9 x=0x65 score=    6.0  ebrr
+
+confiança por coluna (margem do 1º p/ 2º candidato; baixa = duvidoso):
+  0:  inf 1:  inf 2:  0.0 3:  0.0 4:  0.0 5:  inf 6:  inf 7:  inf 8:  inf 9:  inf
+
+plaintext estimado (· = não imprimível, ? = coluna de baixa confiança):
+  m0  |Yo???ouldn|
+  m1  |'t???t thi|
+  m2  |s ???m any|
+  m3  | o???r guy|
+
+texto contínuo:
+Yo???ouldn't???t this ???m any o???r guy
+
+top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
+  col 0 x=0x59 score=    2.1  Y's 
+
+  col 1 x=0x6f score=    8.8  ot o
+
+
+
+
+  col 5 x=0x6f score=    6.9  otmr
+
+  col 6 x=0x75 score=    9.9  u   
+
+  col 7 x=0x6c score=    5.0  ltag
+
+  col 8 x=0x64 score=    4.4  dhnu
+
+  col 9 x=0x6e score=   -1.2  niyy
+

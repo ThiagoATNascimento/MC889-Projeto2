@@ -1,0 +1,92 @@
+7 blocos, bytes válidos no último: 4
+Célula (i, j) = m_i ^ m_j  ('.' = byte não imprimível)
+
+      | m0         | m1         | m2         | m3         | m4         | m5         | m6         
+-------------------------------------------------------------------------------------------------
+m0    | -          | 'AJF..LW.. | <....TiP.N | /E.":.GLA) | &T..S.A..N | 0O.O&.D... | =A.8       
+m1    | 'AJF..LW.. | -          | .ALF.L%..O | ..Ed,...Y( | ..P.E..K.O | ..Q.0..E.. | ..N~       
+m2    | <....TiP.N | .ALF.L%..O | -          | .E.">N..Mg | .T..WM(L.. | .O.O"N-B.S | .A.8       
+m3    | /E.":.GLA) | ..Ed,...Y( | .E.">N..Mg | -          | ....i..PEg | ...m...^R4 | ....       
+m4    | &T..S.A..N | ..P.E..K.O | .T..WM(L.. | ....i..PEg | -          | ....u....S | ....       
+m5    | 0O.O&.D... | ..Q.0..E.. | .O.O"N-B.S | ...m...^R4 | ....u....S | -          | ...w       
+m6    | =A.8       | ..N~       | .A.8       | ....       | ....       | ...w       | -          
+confiança por coluna (margem do 1º p/ 2º candidato; baixa = duvidoso):
+  0:  0.3 1:  8.5 2:  0.0 3:  0.0 4:  0.0 5:  3.1 6:  2.1 7:  0.5 8:  2.8 9:  8.9
+
+plaintext estimado (· = não imprimível, ? = coluna de baixa confiança):
+  m0  |? ???t???n|
+  m1  |?a???l???o|
+  m2  |? ??? ??? |
+  m3  |?e???n???G|
+  m4  |?t???m??? |
+  m5  |?o???n???s|
+  m6  |?a??|
+
+texto contínuo:
+? ???t???n?a???l???o? ??? ??? ?e???n???G?t???m??? ?o???n???s?a??
+
+top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
+  col 0 x=0x55 score=    6.4  Uriz
+  col 0 x=0x53 score=    6.1  Sto|
+  col 0 x=0x4e score=    6.0  Nira
+
+  col 1 x=0x20 score=   16.8   a e
+  col 1 x=0x61 score=    8.3  a a$
+  col 1 x=0x2c score=    5.3  ,m,i
+
+
+
+
+  col 5 x=0x74 score=    9.9  tl n
+  col 5 x=0x75 score=    6.9  um!o
+  col 5 x=0x76 score=    4.9  vn"l
+
+  col 6 x=0x20 score=    7.7   lIg
+  col 6 x=0x28 score=    5.6  (dAo
+  col 6 x=0x25 score=    3.3  %iLb
+
+  col 7 x=0x32 score=    2.9  2eb~
+  col 7 x=0x3e score=    2.4  >inr
+  col 7 x=0x73 score=    1.8  s$#?
+
+  col 8 x=0x61 score=    8.7  aym 
+  col 8 x=0x6d score=    5.9  mua,
+  col 8 x=0x76 score=    4.1  vnz7
+
+  col 9 x=0x6e score=   10.5  no G
+  col 9 x=0x6f score=    1.6  on!F
+  col 9 x=0x72 score=    1.1  rs<[
+
+confiança por coluna (margem do 1º p/ 2º candidato; baixa = duvidoso):
+  0:  inf 1:  inf 2:  0.0 3:  0.0 4:  0.0 5:  inf 6:  inf 7:  inf 8:  inf 9:  inf
+
+plaintext estimado (· = não imprimível, ? = coluna de baixa confiança):
+  m0  |I ???t wan|
+  m1  |na???ll yo|
+  m2  |u ??? I'm |
+  m3  |fe???ng; G|
+  m4  |ot???make |
+  m5  |yo???nders|
+  m6  |ta??|
+
+texto contínuo:
+I ???t wanna???ll you ??? I'm fe???ng; Got???make yo???ndersta??
+
+top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
+  col 0 x=0x49 score=    4.3  Inuf
+
+  col 1 x=0x20 score=   16.8   a e
+
+
+
+
+  col 5 x=0x74 score=    9.9  tl n
+
+  col 6 x=0x20 score=    7.7   lIg
+
+  col 7 x=0x77 score=   -2.5  w ';
+
+  col 8 x=0x61 score=    8.7  aym 
+
+  col 9 x=0x6e score=   10.5  no G
+

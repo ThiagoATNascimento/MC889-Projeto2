@@ -23,6 +23,7 @@ DIF_MASK: list[int] = []
 BLOCK_BYTES = BLOCK_SIZE // 8
 CELL = BLOCK_BYTES  # largura de uma célula = 10 caracteres
 
+SKIP = {2, 3, 4}
 
 def block_anal_bytes(block: int, nbytes: int = BLOCK_BYTES) -> str:
     """ASCII dos nbytes primeiros bytes (big-endian); '.' = não imprimível; completa com espaço."""
@@ -32,14 +33,8 @@ def block_anal_bytes(block: int, nbytes: int = BLOCK_BYTES) -> str:
 
 
 def main():
-    enc = get_encrypter(s07, 4, DEFAULT_KEY)
-    e0 = enc.encrypt_block(0)
 
-    def L(d: int) -> int:
-        """Parte linear da cifra: L(d) = E(d) ^ E(0). Independe da chave."""
-        return enc.encrypt_block(d) ^ e0
-
-    idx = 4
+    idx = 3
     c_all, total_bits = CI[idx], N_BITS[idx]
     total_bytes = total_bits // 8
 
@@ -53,7 +48,7 @@ def main():
     for i in range(n):
         for j in range(n):
             if i != j:
-                xors[i][j] = blocks[i] ^ blocks[j] ^ L(i ^ j)
+                xors[i][j] = blocks[i] ^ blocks[j]
 
     # ---------- tabela simétrica ----------
     header = " " * 6 + "".join(f"| {('m' + str(j)).ljust(CELL)} " for j in range(n))
@@ -85,11 +80,11 @@ def main():
                 f.write(f"m{i} ^ m{j} = {h}\n")
     """
 
-    plain, conf, ranking, d = solve_columns(xors, valid, n)
+    plain, conf, ranking, d = solve_columns(xors, valid, n, skip=SKIP)
     show_solution(plain, conf, ranking, d, n)
 
     # depois de ler o resultado, force o que você tem certeza:
-    hh = "Viver .. muito perigoso"
+    hh = "I just wan"
     hints = {}#{(1,4): ord('c'), (1,5): ord('o'), (1,6): ord('n'), (1,7): ord('d'), (1,8): ord('e'), (1, 9): ord('n'), (2, 0): ord('a'), (2, 1): ord('d')}
     for i in range(len(hh)):
         cc = hh[i]
@@ -99,7 +94,7 @@ def main():
             cc = '.'
 
         hints[(i//10, i%10)] = ord(cc)
-    plain, conf, ranking, d = solve_columns(xors, valid, n, hints=hints)
+    plain, conf, ranking, d = solve_columns(xors, valid, n, hints=hints, skip=SKIP)
     show_solution(plain, conf, ranking, d, n)
 
 
@@ -129,7 +124,7 @@ def _build_score():
 
 LOGP = _build_score()
 
-def solve_columns(xors, valid, n, hints=None, top=3):
+def solve_columns(xors, valid, n, hints=None, top=3, skip=()):
     """
     Para cada posição p (0..9) acha x = m_0[p] maximizando a verossimilhança
     de toda a coluna. hints = {(i, p): byte} fixa m_i[p] (ex.: ord(' ')).
@@ -140,6 +135,11 @@ def solve_columns(xors, valid, n, hints=None, top=3):
     col_x, conf, ranking = [], [], []
 
     for p in range(BLOCK_BYTES):
+        if p in skip:
+            col_x.append(0)
+            conf.append(0.0)      # confiança 0 => vira '?' na saída
+            ranking.append([])
+            continue
         rows = [i for i in range(n) if valid[i] > p]
         fixed = [h ^ d[i][p] for (i, pp), h in hints.items() if pp == p and i in rows]
         cands = set(fixed) if fixed else range(256)
@@ -163,8 +163,11 @@ def show_solution(plain, conf, ranking, d, n, thr=3.0):
     for i, blk in enumerate(plain):
         s = "".join(printable(b) if conf[p] >= thr else "?" for p, b in enumerate(blk))
         print(f"  m{i:<3d}|{s}|")
+
     print("\ntexto contínuo:")
-    print("".join(printable(b) for blk in plain for b in blk))
+    #print("".join(printable(b) for blk in plain for b in blk))
+    print("".join(printable(b) if conf[p] >= thr else "?"
+                    for blk in plain for p, b in enumerate(blk)))
     print("\ntop candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:")
     for p, cands in enumerate(ranking):
         for sc, x in cands:

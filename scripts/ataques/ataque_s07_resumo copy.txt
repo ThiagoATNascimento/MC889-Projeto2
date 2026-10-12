@@ -1,0 +1,6 @@
+
+0: Viver é muito perigos
+1: O homem está condenado a ser livre
+2: TransparÊncia e verdade não são idênticas
+3: A chave foi muito bem escolhida, mas a funçãpo era péssima :/
+4: Quando o fluxo se repete, o XOR de dois trechos entrega o texto sem que ninguém precise descobrir a chave.

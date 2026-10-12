@@ -1,0 +1,80 @@
+3 blocos, bytes válidos no último: 6
+Célula (i, j) = m_i ^ m_j  ('.' = byte não imprimível)
+
+      | m0         | m1         | m2         
+---------------------------------------------
+m0    | -          | #.F_.E.... | 8EI..E     
+m1    | #.F_.E.... | -          | .R....     
+m2    | 8EI..E     | .R....     | -          
+confiança por coluna (margem do 1º p/ 2º candidato; baixa = duvidoso):
+  0:  0.1 1:  3.0 2:  0.0 3:  0.0 4:  0.0 5:  0.4 6:  0.0 7:  0.0 8:  0.6 9:  0.0
+
+plaintext estimado (· = não imprimível, ? = coluna de baixa confiança):
+  m0  |??????????|
+  m1  |??????????|
+  m2  |??????|
+
+texto contínuo:
+??????????????????????????
+
+top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
+  col 0 x=0x4c score=    2.9  Lot
+  col 0 x=0x57 score=    2.8  Wto
+  col 0 x=0x51 score=    2.7  Qri
+
+  col 1 x=0x65 score=    7.1  er 
+  col 1 x=0x20 score=    4.1   7e
+  col 1 x=0x37 score=    3.4  7 r
+
+
+
+
+  col 5 x=0x65 score=    8.1  e  
+  col 5 x=0x20 score=    7.7   ee
+  col 5 x=0x2c score=    4.0  ,ii
+
+  col 6 x=0x73 score=    4.1  soH
+  col 6 x=0x6f score=    4.1  osT
+  col 6 x=0x72 score=    3.4  rnI
+
+  col 7 x=0x73 score=    4.1  so>
+  col 7 x=0x6f score=    4.1  os"
+  col 7 x=0x72 score=    3.4  rn?
+
+  col 8 x=0x20 score=    5.7    ·
+  col 8 x=0x61 score=    5.1  aa·
+  col 8 x=0x65 score=    4.9  ee·
+
+  col 9 x=0x6e score=    3.4  ni·
+  col 9 x=0x69 score=    3.4  in·
+  col 9 x=0x75 score=    3.2  ur·
+
+confiança por coluna (margem do 1º p/ 2º candidato; baixa = duvidoso):
+  0:  inf 1:  inf 2:  0.0 3:  0.0 4:  0.0 5:  inf 6:  inf 7:  inf 8:  inf 9:  inf
+
+plaintext estimado (· = não imprimível, ? = coluna de baixa confiança):
+  m0  |We??? no s|
+  m1  |tr???ers t|
+  m2  |o ???e|
+
+texto contínuo:
+We??? no str???ers to ???e
+
+top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
+  col 0 x=0x57 score=    2.8  Wto
+
+  col 1 x=0x65 score=    7.1  er 
+
+
+
+
+  col 5 x=0x20 score=    7.7   ee
+
+  col 6 x=0x6e score=    3.4  nrU
+
+  col 7 x=0x6f score=    4.1  os"
+
+  col 8 x=0x20 score=    5.7    ·
+
+  col 9 x=0x73 score=    3.2  st·
+
