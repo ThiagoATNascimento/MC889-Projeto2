@@ -2,6 +2,8 @@ from cipher_helper import encrypt_block, get_encrypter, BlockEncryption, block_t
 from cipher_helper import BLOCK_SIZE
 from encrypt.chosen_ciphers import s06, s07, f07
 
+import json
+
 DEFAULT_KEY = 0x3b46df018ec647a
 
 IV = [0xeb70721165, 0x6439edc357, 0x8a4375e1a2, 0xef273fd1e5, 0xfd8535bfae]
@@ -16,20 +18,24 @@ CI = [
 
 N_BITS = [45*4, 70*4, 90*4, 126*4, 214*4]
 
-DIF_POS = [[], [17], [17, 6], [17], [17, 6, 75]]
-
-DIF_MASK = []
-
-for l in DIF_POS:
-    mask: int = 0
-    for d in l:
-        mask += 2**d
-    DIF_MASK.append(mask)
+DIF_POS: list[list[int]] = []
+DIF_MASK: list[int] = []
 
 def main():
-    iv = IV[2]
-    c_all = CI[2]
-    t = N_BITS[2]
+
+    with open("results/avalanche_ctr_counter.json", "r", encoding="utf-8") as f:
+        ava = json.load(f)
+        DIF_POS: list[list[int]] = ava["s07_changes"]
+
+    for l in DIF_POS:
+        mask: int = 0
+        for d in l:
+            mask += 2**d
+        DIF_MASK.append(mask)
+
+    iv = IV[4]
+    c_all = CI[4]
+    t = N_BITS[4]
 
     n_blocks = t // BLOCK_SIZE + 1
     print(n_blocks)
@@ -39,11 +45,50 @@ def main():
     print([f"{ci:x}" for ci in c])
 
     text = ""
-    for i in range(len(c) - 1):
-        m1_xor_m2 = c[i] ^ c[i+1] ^ DIF_MASK[0]
-        text += "|" + block_anal_bytes(m1_xor_m2)
+    mi_xor_mi1: list[int] = []
+    for i in range(n_blocks - 1):
+        xor = c[i] ^ c[i+1] ^ DIF_MASK[0]
+        mi_xor_mi1.append(xor)
+        text += "|" + block_anal_bytes(xor)
 
     print(f"Texto: {text}")
+
+    m0_xor_mi: list[int] = [mi_xor_mi1[0]]
+    for i in range(1, n_blocks - 1):
+        xor = mi_xor_mi1[0] ^ mi_xor_mi1[i]
+        m0_xor_mi.append(xor)
+
+    for i, h in enumerate(m0_xor_mi):
+        print(f"m0 ^ m{i+1} = {block_anal_bytes(h)}")
+
+    print("-----------")
+
+    m1_xor_mi: list[int] = [mi_xor_mi1[1]]
+    for i in range(2, n_blocks - 1):
+        xor = mi_xor_mi1[1] ^ mi_xor_mi1[i]
+        m1_xor_mi.append(xor)
+
+    for i, h in enumerate(m1_xor_mi):
+        print(f"m1 ^ m{i+2} = {block_anal_bytes(h)}")
+
+    print("-----------")
+
+    m2_xor_mi: list[int] = [mi_xor_mi1[2]]
+    for i in range(3, n_blocks - 1):
+        xor = mi_xor_mi1[1] ^ mi_xor_mi1[i]
+        m2_xor_mi.append(xor)
+
+    for i, h in enumerate(m2_xor_mi):
+        print(f"m2 ^ m{i+3} = {block_anal_bytes(h)}")
+
+    """
+    enc = get_encrypter(f07, 8, DEFAULT_KEY)
+    one = enc.encrypt_block(1)
+    two = enc.encrypt_block(2)
+
+    print(f"1 -> {one:b}")
+    print(f"2 -> {two:b}")
+    """
 
 def block_anal_bytes(block: int) -> str:
     xor_bytes = block.to_bytes(10, byteorder='big')

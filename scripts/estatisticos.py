@@ -37,7 +37,7 @@ def efeito_avalanche(rounds_list: list[int], cipher_design, master_key=DEFAULT_K
         encrypter = get_encrypter(cipher_design, r, master_key)
         efeito_avalanche_for_round(encrypter, qtd)
 
-def efeito_avalanche_for_round(encrypter, qtd=1000):
+def efeito_avalanche_for_round(encrypter, qtd=1000) -> list[list[int]]:
 
     total_dif = 0
     total_proportion = 0.0
@@ -85,10 +85,67 @@ def efeito_avalanche_for_round(encrypter, qtd=1000):
     print(f"  fração diferença máxima = {max_proportion}")
     print(f"  número de pares que nunca mudam = {never_change_pairs_count}")
     #print(f"  posições que nunca mudam para j=0: {[k for k in range(BLOCK_SIZE-1, -1, -1) if not changed_pairs[j][k]]}")
-    print(f"  posições que mudaram (ao menos 1x) para j=0: {[k for k in range(BLOCK_SIZE-1, -1, -1) if changed_pairs[0][k]]}")
-    print(f"  posições que mudaram (ao menos 1x) para j=1: {[k for k in range(BLOCK_SIZE-1, -1, -1) if changed_pairs[1][k]]}")
-    print(f"  posições que mudaram (ao menos 1x) para j=2: {[k for k in range(BLOCK_SIZE-1, -1, -1) if changed_pairs[2][k]]}")
+    print(f"  posições que mudaram (ao menos 1x) para j=0: {[k for k in range(BLOCK_SIZE) if changed_pairs[0][k]]}")
+    print(f"  posições que mudaram (ao menos 1x) para j=1: {[k for k in range(BLOCK_SIZE) if changed_pairs[1][k]]}")
+    print(f"  posições que mudaram (ao menos 1x) para j=2: {[k for k in range(BLOCK_SIZE) if changed_pairs[2][k]]}")
 
+    return changed_pairs
+
+def efeito_avalanche_counter_for_round(encrypter, qtd=1000, counter_max=15) -> list[list[int]]:
+
+    total_dif = 0
+    total_proportion = 0.0
+    min_proportion = 1.0
+    max_proportion = 0.0
+
+    changed_pairs = [[False for _ in range(BLOCK_SIZE)] for _ in range(BLOCK_SIZE)]
+
+    for _ in range(qtd):
+        iv_base = random.randint(0, 2**(BLOCK_SIZE//2) - 1)
+
+        encs = []
+        for counter in range(counter_max):
+            yi = (iv_base << (BLOCK_SIZE//2)) | counter
+            encs.append(BlockEncryption(encrypter.encrypt_block(yi), yi))
+
+        for j in range(counter_max-1):
+
+            difs = encs[j].c ^ encs[j+1].c
+            dif_count = difs.bit_count()
+            total_dif += dif_count
+
+            prop = float(dif_count) / BLOCK_SIZE
+            total_proportion += prop
+
+            if prop < min_proportion:
+                min_proportion = prop
+            if prop > max_proportion:
+                max_proportion = prop
+
+            for k in range(BLOCK_SIZE):
+                if (difs >> k) & 1:
+                    changed_pairs[j][k] = True
+
+    never_change_pairs_count = 0
+    for j in range(BLOCK_SIZE):
+        for k in range(BLOCK_SIZE):
+            if not changed_pairs[j][k]:
+                never_change_pairs_count += 1
+
+    mean_dif: float = float(total_dif)/(qtd*BLOCK_SIZE)
+    mean_proportion: float = total_proportion/(qtd*BLOCK_SIZE)
+
+    print(f"  diferença média (n bits) = {mean_dif:.4f}")
+    print(f"  fração diferença média = {mean_proportion}")
+    print(f"  fração diferença mínima = {min_proportion}")
+    print(f"  fração diferença máxima = {max_proportion}")
+    print(f"  número de pares que nunca mudam = {never_change_pairs_count}")
+    #print(f"  posições que nunca mudam para j=0: {[k for k in range(BLOCK_SIZE-1, -1, -1) if not changed_pairs[j][k]]}")
+    print(f"  posições que mudaram (ao menos 1x) para j=0: {[k for k in range(BLOCK_SIZE) if changed_pairs[0][k]]}")
+    print(f"  posições que mudaram (ao menos 1x) para j=1: {[k for k in range(BLOCK_SIZE) if changed_pairs[1][k]]}")
+    print(f"  posições que mudaram (ao menos 1x) para j=2: {[k for k in range(BLOCK_SIZE) if changed_pairs[2][k]]}")
+
+    return changed_pairs
 
 def teste_1_balanceamento(cipher_design, master_key=DEFAULT_KEY, qtd=10000):
     """Verifica se a saída da cifra tem aproximadamente L/2 bits 1 e 0."""
