@@ -15,7 +15,7 @@ CI = [
     0x57d4d75ddd3fe8ef52e154e58871911df56a43866854a557905ce9fc55c92811e25e980fa06a55d265c37491935ce4eb47c374d28e5d921de4615786675efa128a13e34c8e
 ]
 
-N_BITS = [45*4, 70*4, 90*4, 126*4, 214*4]
+N_BITS = [68*4, 90*4, 100*4, 106*4, 138*4]
 
 DIF_POS: list[list[int]] = []
 DIF_MASK: list[int] = []
@@ -39,7 +39,7 @@ def main():
         """Parte linear da cifra: L(d) = E(d) ^ E(0). Independe da chave."""
         return enc.encrypt_block(d) ^ e0
 
-    idx = 4
+    idx = 2
     c_all, total_bits = CI[idx], N_BITS[idx]
     total_bytes = total_bits // 8
 
@@ -89,7 +89,7 @@ def main():
     show_solution(plain, conf, ranking, d, n)
 
     # depois de ler o resultado, force o que você tem certeza:
-    hh = " ??r·  s ?"
+    hh = "Sem"
     hints = {}#{(1,4): ord('c'), (1,5): ord('o'), (1,6): ord('n'), (1,7): ord('d'), (1,8): ord('e'), (1, 9): ord('n'), (2, 0): ord('a'), (2, 1): ord('d')}
     for i in range(len(hh)):
         cc = hh[i]
