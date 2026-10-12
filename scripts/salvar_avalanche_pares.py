@@ -18,7 +18,7 @@ def main():
         [k for k in range(BLOCK_SIZE) if s06_changed_pairs[j][k]]
         for j in range(COUNTER_MAX-1)
     ]
-
+    
     print(f"\n----> AVALANCHE na keystream para {s07.NAME}:")
     encrypter = get_encrypter(s07, 4, DEFAULT_KEY)
     s07_changed_pairs = efeito_avalanche_counter_for_round(encrypter, qtd=10000, counter_max=COUNTER_MAX)

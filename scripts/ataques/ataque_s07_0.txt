@@ -59,44 +59,34 @@ top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
   col 9 x=0x6e score=    3.0  nd·
 
 confiança por coluna (margem do 1º p/ 2º candidato; baixa = duvidoso):
-  0:  inf 1:  inf 2:  inf 3:  inf 4:  inf 5:  0.0 6:  0.0 7:  0.0 8:  0.0 9:  0.0
+  0:  inf 1:  inf 2:  inf 3:  inf 4:  inf 5:  inf 6:  inf 7:  inf 8:  inf 9:  inf
 
 plaintext estimado (· = não imprimível, ? = coluna de baixa confiança):
-  m0  |Comer?????|
-  m1  |`ooo ?????|
-  m2  |zu|
+  m0  |Viver ·· m|
+  m1  |uito perig|
+  m2  |os|
 
 texto contínuo:
-Comerp··io`ooo     ezu
+Viver ·· muito perigos
 
 top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
-  col 0 x=0x43 score=   -3.3  C`z
+  col 0 x=0x56 score=    2.8  Vuo
 
-  col 1 x=0x6f score=    6.0  oou
+  col 1 x=0x69 score=    5.4  iis
 
-  col 2 x=0x6d score=    3.7  mov
+  col 2 x=0x76 score=    1.8  vtm
 
   col 3 x=0x65 score=    4.7  eo·
 
   col 4 x=0x72 score=    4.6  r !
 
-  col 5 x=0x70 score=    3.7  p ·
   col 5 x=0x20 score=    3.7   pW
-  col 5 x=0x61 score=    1.3  a1·
 
-  col 6 x=0x86 score=    1.6  · #
-  col 6 x=0x20 score=    1.6   ··
-  col 6 x=0xc7 score=    1.3  ·ab
+  col 6 x=0xc3 score=    1.2  ·ef
 
-  col 7 x=0xfb score=    1.6  · ·
-  col 7 x=0x20 score=    1.6   ·[
-  col 7 x=0xba score=    1.3  ·a·
+  col 7 x=0xa9 score=    0.6  ·r·
 
-  col 8 x=0x69 score=    4.6  i ·
   col 8 x=0x20 score=    4.6   i·
-  col 8 x=0x65 score=    2.8  e,·
 
-  col 9 x=0x6f score=    4.7  oe·
-  col 9 x=0x65 score=    4.7  eo·
-  col 9 x=0x6e score=    3.0  nd·
+  col 9 x=0x6d score=    1.4  mg·
 

@@ -1,0 +1,138 @@
+12 blocos, bytes válidos no último: 1
+Célula (i, j) = m_i ^ m_j  ('.' = byte não imprimível)
+
+      | m0         | m1         | m2         | m3         | m4         | m5         | m6         | m7         | m8         | m9         | m10        | m11        
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+m0    | -          | /E...EG... | n...<E.... | )..r3..... | ?..#.O..N  | #...rG.... | f..2rA...@ | "E.l.....K | <.Q%.UG!.. | +.V..N..N. | /..<.O.O.\ | 7          
+m1    | /E...EG... | -          | AU..8.V... | .O..7EL... | .O....W.O; | .V.Hv.O... | IR..v.R..[ | .....ED..P | .UG....5.. | .S@_..N.O. | .J....U[.G | .          
+m2    | n...<E.... | AU..8.V... | -          | G....E.... | Q...*...R. | M..RN..... | ....N....N | LU..*E...E | R.W.!.V+.. | E.PE!...R. | A...7..E.R | Y          
+m3    | )..r3..... | .O..7EL... | G....E.... | -          | ...Q%O..T. | ....AG.... | O..@AA...N | .O..%....E | ..IW.UL).. | ..N..N..T. | ...N8O.G.R | .          
+m4    | ?..#.O..N  | .O....W.O; | Q...*...R. | ...Q%O..T. | -          | ....d...N/ | Y...d...U` | .O.O.O..Sk | ..U...W E8 | ..R......# | .......NC| | .          
+m5    | #...rG.... | .V.Hv.O... | M..RN..... | ....AG.... | ....d...N/ | -          | E........O | .V..dG...D | ..B.o.O".. | ..E.o...N. | ....y..L.S | .          
+m6    | f..2rA...@ | IR..v.R..[ | ....N....N | O..@AA...N | Y...d...U` | E........O | -          | DR.^dA.... | Z.U.o.R!.X | M.R.o...UC | I...y..O.. | Q          
+m7    | "E.l.....K | .....ED..P | LU..*E...E | .O..%....E | .O.O.O..Sk | .V..dG...D | DR.^dA.... | -          | .UFI.UD).S | .SA..N..SH | .J.P.O.G.. | .          
+m8    | <.Q%.UG!.. | .UG....5.. | R.W.!.V+.. | ..IW.UL).. | ..U...W E8 | ..B.o.O".. | Z.U.o.R!.X | .UFI.UD).S | -          | ......N-E. | ..B...Un.D | .          
+m9    | +.V..N..N. | .S@_..N.O. | E.PE!...R. | ..N..N..T. | ..R......# | ..E.o...N. | M.R.o...UC | .SA..N..SH | ......N-E. | -          | ..E....CC_ | .          
+m10   | /..<.O.O.\ | .J....U[.G | A...7..E.R | ...N8O.G.R | .......NC| | ....y..L.S | I...y..O.. | .J.P.O.G.. | ..B...Un.D | ..E....CC_ | -          | .          
+m11   | 7          | .          | Y          | .          | .          | .          | Q          | .          | .          | .          | .          | -          
+confiança por coluna (margem do 1º p/ 2º candidato; baixa = duvidoso):
+  0:  2.0 1:  8.7 2:  4.6 3:  1.0 4:  5.2 5: 18.2 6:  7.2 7:  0.8 8: 10.3 9:  3.2
+
+plaintext estimado (· = não imprimível, ? = coluna de baixa confiança):
+  m0  |?ev?R g?nk|
+  m1  |? `?Ve ?op|
+  m2  |?up?nev?re|
+  m3  |?on?a l?te|
+  m4  |?or?Dow? K|
+  m5  |?ve? go?nd|
+  m6  |?rr? ar?u+|
+  m7  |? a?D d?s |
+  m8  |?u'?Ou ?es|
+  m9  |?s ?Onn? h|
+  m10 |?je?You?c7|
+  m11 |?|
+
+texto contínuo:
+NevLR gonka `·Ve {op up·neveregon>a lgteqoroDown Kmve· golnd(rr~ arou+l a D dgs ru'iOu Neses ·Onnc hajepYou c7y
+
+top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
+  col 0 x=0x4e score=   10.4  Na g
+  col 0 x=0x4a score=    8.4  Je$c
+  col 0 x=0x46 score=    8.2  Fi(o
+
+  col 1 x=0x65 score=   18.6  e uo
+  col 1 x=0x63 score=    9.8  c&si
+  col 1 x=0x79 score=    5.0  y<is
+
+  col 2 x=0x76 score=   13.5  v`pn
+  col 2 x=0x65 score=    9.0  esc}
+  col 2 x=0x72 score=    8.7  rdtj
+
+  col 3 x=0x4c score=   -1.0  L··>
+  col 3 x=0x53 score=   -2.0  S··!
+  col 3 x=0xa1 score=   -3.0  ·: ·
+
+  col 4 x=0x52 score=    7.7  RVna
+  col 4 x=0x78 score=    2.4  x|DK
+  col 4 x=0x5c score=   -2.5  \X`o
+
+  col 5 x=0x20 score=   23.5   ee 
+  col 5 x=0x26 score=    5.3  &cc&
+  col 5 x=0x6f score=    4.9  o**o
+
+  col 6 x=0x67 score=   13.3  g vl
+  col 6 x=0x64 score=    6.1  d#uo
+  col 6 x=0x66 score=    5.8  f!wm
+
+  col 7 x=0x6f score=   11.8  o{eg
+  col 7 x=0x65 score=   11.0  eqom
+  col 7 x=0x64 score=    8.9  dpnl
+
+  col 8 x=0x6e score=   21.1  nort
+  col 8 x=0x6f score=   10.7  onsu
+  col 8 x=0x68 score=    8.5  hitr
+
+  col 9 x=0x6b score=    5.8  kpee
+  col 9 x=0x6a score=    2.5  jqdd
+  col 9 x=0x6d score=    2.1  mvcc
+
+aviso: hints conflitantes na coluna 0
+aviso: hints conflitantes na coluna 1
+aviso: hints conflitantes na coluna 2
+aviso: hints conflitantes na coluna 3
+aviso: hints conflitantes na coluna 4
+aviso: hints conflitantes na coluna 5
+aviso: hints conflitantes na coluna 8
+aviso: hints conflitantes na coluna 9
+confiança por coluna (margem do 1º p/ 2º candidato; baixa = duvidoso):
+  0: 13.7 1: 18.7 2: 12.7 3: 17.6 4: 14.6 5: 27.2 6:  inf 7:  inf 8: 10.9 9:  7.7
+
+plaintext estimado (· = não imprimível, ? = coluna de baixa confiança):
+  m0  |Zcv·r "fhm|
+  m1  |u&`oveeriv|
+  m2  |4spuNe3ltc|
+  m3  |sin·A )nrc|
+  m4  |eir·do2g&M|
+  m5  |ype'·g*ehb|
+  m6  |<tr··a7fs-|
+  m7  |x&a·d !nu&|
+  m8  |fs'·oueGcu|
+  m9  |qu 0on+j&n|
+  m10 |ule·yo0)e1|
+  m11 |m|
+
+texto contínuo:
+Zcv·r "fhmu&`oveeriv4spuNe3ltcsin·A )nrceir·do2g&Mype'·g*ehb<tr··a7fs-x&a·d !nu&fs'·oueGcuqu 0on+j&nule·yo0)e1m
+
+top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
+  col 0 x=0x5a score=    1.2  Zu4s
+  col 0 x=0x56 score=  -12.6  Vy8·
+  col 0 x=0x01 score=  -17.0  ·.o(
+
+  col 1 x=0x63 score=    9.8  c&si
+  col 1 x=0x2c score=   -8.9  ,i<&
+  col 1 x=0x69 score=  -11.5  i,yc
+
+  col 2 x=0x76 score=   13.5  v`pn
+  col 2 x=0x62 score=    0.8  btdz
+  col 2 x=0x69 score=   -8.6  i·oq
+
+  col 3 x=0xf4 score=   -7.6  ·ou·
+  col 3 x=0x65 score=  -25.2  e···
+
+  col 4 x=0x72 score=  -10.8  rvNA
+  col 4 x=0x24 score=  -25.5  $ ··
+
+  col 5 x=0x20 score=   23.5   ee 
+  col 5 x=0x35 score=   -3.7  5pp5
+
+  col 6 x=0x22 score=   -8.0  "e3)
+
+  col 7 x=0x66 score=    5.1  frln
+
+  col 8 x=0x68 score=    8.5  hitr
+  col 8 x=0x20 score=   -2.4   !<:
+
+  col 9 x=0x6d score=    2.1  mvcc
+  col 9 x=0x7c score=   -5.6  |grr
+

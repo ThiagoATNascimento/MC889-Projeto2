@@ -89,7 +89,7 @@ def main():
     show_solution(plain, conf, ranking, d, n)
 
     # depois de ler o resultado, force o que você tem certeza:
-    hh = "Comer......... "
+    hh = "Viver .. muito perigoso"
     hints = {}#{(1,4): ord('c'), (1,5): ord('o'), (1,6): ord('n'), (1,7): ord('d'), (1,8): ord('e'), (1, 9): ord('n'), (2, 0): ord('a'), (2, 1): ord('d')}
     for i in range(len(hh)):
         cc = hh[i]
