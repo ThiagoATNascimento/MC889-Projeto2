@@ -1,0 +1,4 @@
+
+- Mostrar exemplos de entradas mudando apenas um bit e suas saídas
+
+- Falar da possibilidade de um fácil distinguidor

@@ -1,6 +1,6 @@
 from encrypt.spn import SPN80
 from encrypt.feistel import Feistel80
-from encrypt.cipher_base import BLOCK_SIZE
+from encrypt.cipher_base import BLOCK_SIZE, SPN_ROUNDS, FEISTEL_ROUNDS
 
 block_bytes = BLOCK_SIZE // 8
 
@@ -26,6 +26,21 @@ def block_from_str(block_text: str) -> int:
     m = int.from_bytes(data.ljust(block_bytes, b"\x00"), "big")
     return m
 
+def get_encrypter(cipher_design: object, rounds: int | None = None, master_key: int | None = None) -> SPN80 | Feistel80:
+    if master_key is not None:
+            cipher_design.MASTER_KEY = master_key
+    
+    if cipher_design.SPEC == "spn":
+        #print("spn!")
+        r = rounds if rounds is not None else SPN_ROUNDS
+        encrypter = SPN80(cipher_design.SBOX, cipher_design.SPN_PBOX, r, cipher_design.MASTER_KEY)
+    else:
+        #print("feistel!")
+        r = rounds if rounds is not None else FEISTEL_ROUNDS
+        encrypter = Feistel80(cipher_design.SBOX, cipher_design.FEISTEL_PBOX, r, cipher_design.MASTER_KEY)
+
+    return encrypter
+
 def encrypt_block(m: int, cipher_design: object, master_key: int | None = None) -> BlockEncryption:
     """
         Retorna (c, c_hex_str), (m, m_hex_str)
@@ -42,8 +57,6 @@ def encrypt_block(m: int, cipher_design: object, master_key: int | None = None) 
     else:
         #print("feistel!")
         encrypter = Feistel80.from_design(cipher_design)
-
-    
 
     c = encrypter.encrypt_block(m)
 
