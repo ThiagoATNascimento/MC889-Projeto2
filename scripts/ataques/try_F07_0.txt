@@ -1,0 +1,95 @@
+4 blocos, bytes válidos no último: 4
+Célula (i, j) = m_i ^ m_j  ('.' = byte não imprimível)
+
+      | m0         | m1         | m2         | m3         
+----------------------------------------------------------
+m0    | -          | ..M......O | .J.....I.. | ..Z^       
+m1    | ..M......O | -          | s......A.E | L..O       
+m2    | .J.....I.. | s......A.E | -          | ?..]       
+m3    | ..Z^       | L..O       | ?..]       | -          
+confiança por coluna (margem do 1º p/ 2º candidato; baixa = duvidoso):
+  0:  3.4 1:  0.6 2:  0.0 3:  2.3 4:  2.3 5:  1.0 6:  0.6 7:  2.9 8:  0.6 9:  3.9
+
+plaintext estimado (· = não imprimível, ? = coluna de baixa confiança):
+  m0  |·????????o|
+  m1  | ???????? |
+  m2  |S????????e|
+  m3  |l???|
+
+texto contínuo:
+··,ptmiito  aaaadau S··sone ael v.
+
+top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
+  col 0 x=0xc3 score=    2.6  · Sl
+  col 0 x=0x20 score=   -0.8   ···
+  col 0 x=0x61 score=   -1.1  a···
+
+  col 1 x=0xc0 score=    3.3  · · 
+  col 1 x=0x81 score=    2.6  ·a·a
+  col 1 x=0x85 score=    2.5  ·e·e
+
+  col 2 x=0x2c score=    2.1  ,a·v
+  col 2 x=0x20 score=    2.1   m·z
+  col 2 x=0x6d score=    1.8  m ·7
+
+  col 3 x=0x70 score=    5.6  pas.
+  col 3 x=0x72 score=    3.3  rcq,
+  col 3 x=0x31 score=    2.7  1 2o
+
+  col 4 x=0x74 score=    6.2  tao`
+  col 4 x=0x7a score=    3.9  zoan
+  col 4 x=0x72 score=    3.6  rgif
+
+  col 5 x=0x6d score=    5.5  man·
+  col 5 x=0x6f score=    4.5  ocl·
+  col 5 x=0x65 score=    4.2  eif·
+
+  col 6 x=0x69 score=    5.6  ide3
+  col 6 x=0x63 score=    5.0  cno9
+  col 6 x=0x61 score=    5.0  alm;
+
+  col 7 x=0x69 score=    7.2  ia ·
+  col 7 x=0x65 score=    4.2  em,·
+  col 7 x=0x28 score=    3.7  ( aU
+
+  col 8 x=0x74 score=    5.3  tua·
+  col 8 x=0x65 score=    4.7  edp·
+  col 8 x=0x64 score=    3.8  deq·
+
+  col 9 x=0x6f score=    7.6  o e·
+  col 9 x=0x2a score=    3.7  *e ·
+  col 9 x=0x20 score=    3.5   o*·
+
+confiança por coluna (margem do 1º p/ 2º candidato; baixa = duvidoso):
+  0:  inf 1:  inf 2:  inf 3:  inf 4:  inf 5:  inf 6:  inf 7:  inf 8:  inf 9:  inf
+
+plaintext estimado (· = não imprimível, ? = coluna de baixa confiança):
+  m0  |·· preciso|
+  m1  | imaginar |
+  m2  |S··sifo fe|
+  m3  |liz.|
+
+texto contínuo:
+·· preciso imaginar S··sifo feliz.
+
+top candidatos por coluna (m_0[p]) e como ficam nos 4 primeiros blocos:
+  col 0 x=0xc3 score=    2.6  · Sl
+
+  col 1 x=0x89 score=    1.2  ·i·i
+
+  col 2 x=0x20 score=    2.1   m·z
+
+  col 3 x=0x70 score=    5.6  pas.
+
+  col 4 x=0x72 score=    3.6  rgif
+
+  col 5 x=0x65 score=    4.2  eif·
+
+  col 6 x=0x63 score=    5.0  cno9
+
+  col 7 x=0x69 score=    7.2  ia ·
+
+  col 8 x=0x73 score=    3.6  srf·
+
+  col 9 x=0x6f score=    7.6  o e·
+
