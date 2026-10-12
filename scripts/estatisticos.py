@@ -12,21 +12,22 @@ def main():
     #efeito_avalanche(list(range(1, 7)), s06)
     #efeito_avalanche(list(range(1, 6)), s07)
     #efeito_avalanche(list(range(1, 10)), f07)
-
     #print("\n==================================================")
 
     #teste_1_balanceamento(s06)
     #teste_1_balanceamento(s07)
     #teste_1_balanceamento(f07)
-
     #print("\n==================================================")
 
+    #teste_2_pairs(s06)
+    #teste_2_pairs(s07)
+    #teste_2_pairs(f07)
+    #print("\n==================================================")
 
-    teste_2_pairs(s06)
-    teste_2_pairs(s07)
-    teste_2_pairs(f07)
-
-    print("\n==================================================")
+    teste_3_(s06)
+    teste_3_(s07)
+    teste_3_(f07)
+    print("\n==================================================")#
 
 
 def efeito_avalanche(rounds_list: list[int], cipher_design, master_key=DEFAULT_KEY, qtd=1000):
@@ -143,7 +144,7 @@ def teste_2_pairs(cipher_design, master_key=DEFAULT_KEY, qtd=10000): # "serial"
         print(f"    esperado: {expected:.2f} | Dif absoluta: {dif:.2f} | Taxa de erro: {error_rate:.4f}")
 
 def teste_3_(cipher_design, master_key=DEFAULT_KEY, qtd=1000):
-    pass
+    t3_evaluate(cipher_design, cipher_design.NAME, master_key)
 
 if __name__ == "__main__":
     main()
