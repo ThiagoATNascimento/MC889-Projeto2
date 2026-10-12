@@ -1,0 +1,32 @@
+
+----> Teste de PARES DE BITS para SPN S06:
+  Par 00: 100222 encontrados
+    esperado: 100000.00 | Dif absoluta: 222.00 | Taxa de erro: 0.0022
+  Par 01: 100301 encontrados
+    esperado: 100000.00 | Dif absoluta: 301.00 | Taxa de erro: 0.0030
+  Par 10: 99736 encontrados
+    esperado: 100000.00 | Dif absoluta: 264.00 | Taxa de erro: 0.0026
+  Par 11: 99741 encontrados
+    esperado: 100000.00 | Dif absoluta: 259.00 | Taxa de erro: 0.0026
+
+----> Teste de PARES DE BITS para SPN S07:
+  Par 00: 100110 encontrados
+    esperado: 100000.00 | Dif absoluta: 110.00 | Taxa de erro: 0.0011
+  Par 01: 99798 encontrados
+    esperado: 100000.00 | Dif absoluta: 202.00 | Taxa de erro: 0.0020
+  Par 10: 99874 encontrados
+    esperado: 100000.00 | Dif absoluta: 126.00 | Taxa de erro: 0.0013
+  Par 11: 100218 encontrados
+    esperado: 100000.00 | Dif absoluta: 218.00 | Taxa de erro: 0.0022
+
+----> Teste de PARES DE BITS para Feistel F07:
+  Par 00: 100342 encontrados
+    esperado: 100000.00 | Dif absoluta: 342.00 | Taxa de erro: 0.0034
+  Par 01: 100077 encontrados
+    esperado: 100000.00 | Dif absoluta: 77.00 | Taxa de erro: 0.0008
+  Par 10: 99957 encontrados
+    esperado: 100000.00 | Dif absoluta: 43.00 | Taxa de erro: 0.0004
+  Par 11: 99624 encontrados
+    esperado: 100000.00 | Dif absoluta: 376.00 | Taxa de erro: 0.0038
+
+==================================================

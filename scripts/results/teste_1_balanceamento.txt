@@ -1,0 +1,26 @@
+
+----> Teste de BALANCEAMENTO para SPN S06:
+  total 1s = 400132
+  total 0s = 399868
+  esperado ~= 400000.00 1s / 0s
+  diferenca absoluta = 132.00
+  taxa de diferença = 0.00033
+
+
+----> Teste de BALANCEAMENTO para SPN S07:
+  total 1s = 400917
+  total 0s = 399083
+  esperado ~= 400000.00 1s / 0s
+  diferenca absoluta = 917.00
+  taxa de diferença = 0.0022925
+
+
+----> Teste de BALANCEAMENTO para Feistel F07:
+  total 1s = 400230
+  total 0s = 399770
+  esperado ~= 400000.00 1s / 0s
+  diferenca absoluta = 230.00
+  taxa de diferença = 0.000575
+
+
+==================================================
