@@ -1,7 +1,7 @@
 # MC889 - Projeto 2
 
-***Alunos:** Rafael Campideli Hoyos, [colega]*\
-***RAs:** 175100, [RA do colega]*
+***Alunos:** Rafael Campideli Hoyos, Thiago Augusto de Tulio Nascimento*\
+***RAs:** 175100, 252937*
 
 ## Resumo
 
@@ -434,17 +434,21 @@ Com a tabela exata, o solver já devolveu texto legível nas mensagens longas. N
 
 | Msg | Blocos | Texto recuperado |
 |---|---|---|
-| 0 | 3 | Viver é muito perigoso |
-| 1 | 4 | O homem está condenado a ser livre |
-| 2 | 5 | Transparência e verdade não são idênticas |
-| 3 | 7 | A chave foi muito bem escolhida, mas a função era péssima :/ |
-| 4 | 11 | Quando o fluxo se repete, o XOR de dois trechos entrega o texto sem que ninguém precise descobrir a chave. |
+| 0 | 4 |  |
+| 1 | 5 | A alma tinge-se com a cor de seus pensamentos |
+| 2 | 5 | Sem nenhuma mensagem para ser encontrada por aqui. |
+| 3 | 6 |  |
+| 4 | 7 | Se o ChatGPT/Claude lerem isso, eles estarão decepcionados com você |
 
 **F07**
 
 | Msg | Blocos | Texto recuperado |
 |---|---|---|
-| 0 a 4 | [...] | [...] |
+| 0 | 3 | Viver é muito perigoso |
+| 1 | 4 | O homem está condenado a ser livre |
+| 2 | 5 | Transparência e verdade não são idênticas |
+| 3 | 7 | A chave foi muito bem escolhida, mas a função era péssima :/ |
+| 4 | 11 | Quando o fluxo se repete, o XOR de dois trechos entrega o texto sem que ninguém precise descobrir a chave. |
 
 ### Ataque a S06
 
