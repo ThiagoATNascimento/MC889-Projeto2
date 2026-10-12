@@ -1,8 +1,10 @@
+import math
+
 from encrypt.spn import SPN80
 from encrypt.feistel import Feistel80
 from encrypt.cipher_base import BLOCK_SIZE, SPN_ROUNDS, FEISTEL_ROUNDS
 
-block_bytes = BLOCK_SIZE // 8
+BLOCK_BYTES = BLOCK_SIZE // 8
 
 class BlockEncryption:
     def __init__(self, c: int, m: int):
@@ -10,8 +12,8 @@ class BlockEncryption:
         self.m = m
         self.c_b = f"0b{c:0{BLOCK_SIZE}b}"
         self.m_b = f"0b{m:0{BLOCK_SIZE}b}"
-        self.c_hex = f"0x{c:0{block_bytes*2}x}"
-        self.m_hex = f"0x{m:0{block_bytes*2}x}"
+        self.c_hex = f"0x{c:0{BLOCK_BYTES*2}x}"
+        self.m_hex = f"0x{m:0{BLOCK_BYTES*2}x}"
 
     def c_bit_count(self) -> tuple[int, int]:
         """
@@ -23,8 +25,50 @@ class BlockEncryption:
 
 def block_from_str(block_text: str) -> int:
     data = block_text.encode()
-    m = int.from_bytes(data.ljust(block_bytes, b"\x00"), "big")
+    m = int.from_bytes(data.ljust(BLOCK_BYTES, b"\x00"), "big")
     return m
+
+def block_to_str(m: int) -> str:
+    data = m.to_bytes(BLOCK_BYTES, "big")
+    return data.rstrip(b"\x00").decode()
+
+import math
+
+def get_blocks(msg_int: int, total_bits: int) -> list:
+    """
+    Divide a mensagem inteira em uma lista de blocos de 80 bits.
+    Alinha o último bloco (truncado) à esquerda, preenchendo com zeros à direita.
+    """
+    block_bits = BLOCK_BYTES * 8
+    num_blocks = math.ceil(total_bits / block_bits)
+    blocks = []
+    
+    mask = (1 << block_bits) - 1
+    
+    for i in range(num_blocks):
+        shift_amount = total_bits - ((i + 1) * block_bits)
+        
+        if shift_amount >= 0:
+            # CASO 1: Bloco completo (80 bits)
+            bloco = (msg_int >> shift_amount) & mask
+            blocks.append(bloco)
+            
+        else:
+            # CASO 2: Último bloco incompleto (truncado)
+            bits_restantes = total_bits - (i * block_bits)
+            
+            # 1. Isola os bits que sobraram na extremidade direita do inteiro original
+            bloco_truncado = msg_int & ((1 << bits_restantes) - 1)
+            
+            # 2. Desloca para a esquerda para alinhar com o topo do bloco de 80 bits
+            # Isso adiciona os zeros à direita necessários para a matemática do XOR bater
+            alinhamento = block_bits - bits_restantes
+            bloco_alinhado = bloco_truncado << alinhamento
+            
+            blocks.append(bloco_alinhado)
+            
+    return blocks
+
 
 def get_encrypter(cipher_design: object, rounds: int | None = None, master_key: int | None = None) -> SPN80 | Feistel80:
     if master_key is not None:

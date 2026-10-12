@@ -9,9 +9,9 @@ DEFAULT_KEY = 0x3b46df018ec647a
 
 def main():
 
-    #efeito_avalanche(list(range(1, 7)), s06)
-    #efeito_avalanche(list(range(1, 6)), s07)
-    #efeito_avalanche(list(range(1, 10)), f07)
+    efeito_avalanche(list(range(1, 7)), s06)
+    efeito_avalanche(list(range(1, 6)), s07)
+    efeito_avalanche(list(range(1, 10)), f07)
     #print("\n==================================================")
 
     #teste_1_balanceamento(s06)
@@ -24,10 +24,10 @@ def main():
     #teste_2_pairs(f07)
     #print("\n==================================================")
 
-    teste_3_(s06)
-    teste_3_(s07)
-    teste_3_(f07)
-    print("\n==================================================")#
+    #teste_3_(s06)
+    #teste_3_(s07)
+    #teste_3_(f07)
+    #print("\n==================================================")#
 
 
 def efeito_avalanche(rounds_list: list[int], cipher_design, master_key=DEFAULT_KEY, qtd=1000):
@@ -85,7 +85,9 @@ def efeito_avalanche_for_round(encrypter, qtd=1000):
     print(f"  fração diferença máxima = {max_proportion}")
     print(f"  número de pares que nunca mudam = {never_change_pairs_count}")
     #print(f"  posições que nunca mudam para j=0: {[k for k in range(BLOCK_SIZE-1, -1, -1) if not changed_pairs[j][k]]}")
-    print(f"  posições que mudaram (ao menos 1x) para j=0: {[k for k in range(BLOCK_SIZE-1, -1, -1) if changed_pairs[j][k]]}")
+    print(f"  posições que mudaram (ao menos 1x) para j=0: {[k for k in range(BLOCK_SIZE-1, -1, -1) if changed_pairs[0][k]]}")
+    print(f"  posições que mudaram (ao menos 1x) para j=1: {[k for k in range(BLOCK_SIZE-1, -1, -1) if changed_pairs[1][k]]}")
+    print(f"  posições que mudaram (ao menos 1x) para j=2: {[k for k in range(BLOCK_SIZE-1, -1, -1) if changed_pairs[2][k]]}")
 
 
 def teste_1_balanceamento(cipher_design, master_key=DEFAULT_KEY, qtd=10000):

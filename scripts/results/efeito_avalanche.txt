@@ -1,47 +1,59 @@
 
 ----> EFEITO AVALANCHE para SPN S06:
 >> Até round 1:
-  diferença média (n bits) = 2.2497
-  fração diferença média = 0.02812171874999632
+  diferença média (n bits) = 2.2479
+  fração diferença média = 0.02809812499999616
   fração diferença mínima = 0.0125
   fração diferença máxima = 0.05
   número de pares que nunca mudam = 6120
-  posições que mudaram (ao menos 1x) para j=0: [79, 78, 77, 76]
+  posições que mudaram (ao menos 1x) para j=0: [3, 2, 1, 0]
+  posições que mudaram (ao menos 1x) para j=1: [2, 1, 0]
+  posições que mudaram (ao menos 1x) para j=2: [3, 2, 0]
 >> Até round 2:
-  diferença média (n bits) = 3.6286
-  fração diferença média = 0.04535796874999849
+  diferença média (n bits) = 3.6355
+  fração diferença média = 0.04544390624999854
   fração diferença mínima = 0.0125
   fração diferença máxima = 0.1
   número de pares que nunca mudam = 5780
-  posições que mudaram (ao menos 1x) para j=0: [59, 58, 57, 56, 55, 54, 53, 52]
+  posições que mudaram (ao menos 1x) para j=0: [55, 54, 53, 52, 51, 50, 49, 48]
+  posições que mudaram (ao menos 1x) para j=1: [55, 54, 53, 52, 51, 50, 49, 48]
+  posições que mudaram (ao menos 1x) para j=2: [54, 53, 52, 51, 50, 49, 48]
 >> Até round 3:
-  diferença média (n bits) = 4.9820
-  fração diferença média = 0.06227468749999964
+  diferença média (n bits) = 4.9780
+  fração diferença média = 0.06222531250000084
   fração diferença mínima = 0.0125
   fração diferença máxima = 0.15
   número de pares que nunca mudam = 5440
-  posições que mudaram (ao menos 1x) para j=0: [79, 78, 77, 76, 75, 74, 73, 72, 3, 2, 1, 0]
+  posições que mudaram (ao menos 1x) para j=0: [79, 78, 77, 76, 7, 6, 5, 4, 3, 2, 1, 0]
+  posições que mudaram (ao menos 1x) para j=1: [79, 78, 77, 76, 7, 6, 5, 4, 3, 2, 1, 0]
+  posições que mudaram (ao menos 1x) para j=2: [79, 78, 77, 76, 7, 6, 5, 4, 3, 2, 1, 0]
 >> Até round 4:
-  diferença média (n bits) = 6.2786
-  fração diferença média = 0.07848218749999947
+  diferença média (n bits) = 6.2883
+  fração diferença média = 0.0786042187499991
   fração diferença mínima = 0.0125
   fração diferença máxima = 0.1875
   número de pares que nunca mudam = 5120
-  posições que mudaram (ao menos 1x) para j=0: [63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48]
+  posições que mudaram (ao menos 1x) para j=0: [59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44]
+  posições que mudaram (ao menos 1x) para j=1: [59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44]
+  posições que mudaram (ao menos 1x) para j=2: [59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44]
 >> Até round 5:
-  diferença média (n bits) = 7.5853
-  fração diferença média = 0.094816406250001
+  diferença média (n bits) = 7.5574
+  fração diferença média = 0.09446703125000079
   fração diferença mínima = 0.0125
   fração diferença máxima = 0.225
   número de pares que nunca mudam = 4800
-  posições que mudaram (ao menos 1x) para j=0: [79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 7, 6, 5, 4, 3, 2, 1, 0]
+  posições que mudaram (ao menos 1x) para j=0: [79, 78, 77, 76, 75, 74, 73, 72, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+  posições que mudaram (ao menos 1x) para j=1: [79, 78, 77, 76, 75, 74, 73, 72, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+  posições que mudaram (ao menos 1x) para j=2: [79, 78, 77, 76, 75, 74, 73, 72, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 >> Até round 6:
-  diferença média (n bits) = 8.8682
-  fração diferença média = 0.11085296874999984
+  diferença média (n bits) = 8.8566
+  fração diferença média = 0.11070718749999997
   fração diferença mínima = 0.0125
   fração diferença máxima = 0.25
   número de pares que nunca mudam = 4480
-  posições que mudaram (ao menos 1x) para j=0: [67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44]
+  posições que mudaram (ao menos 1x) para j=0: [63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40]
+  posições que mudaram (ao menos 1x) para j=1: [63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40]
+  posições que mudaram (ao menos 1x) para j=2: [63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40]
 
 ----> EFEITO AVALANCHE para SPN S07:
 >> Até round 1:
@@ -50,35 +62,45 @@
   fração diferença mínima = 0.0125
   fração diferença máxima = 0.0125
   número de pares que nunca mudam = 6320
-  posições que mudaram (ao menos 1x) para j=0: [79]
+  posições que mudaram (ao menos 1x) para j=0: [0]
+  posições que mudaram (ao menos 1x) para j=1: [1]
+  posições que mudaram (ao menos 1x) para j=2: [2]
 >> Até round 2:
   diferença média (n bits) = 1.0000
   fração diferença média = 0.012500000000018082
   fração diferença mínima = 0.0125
   fração diferença máxima = 0.0125
   número de pares que nunca mudam = 6320
-  posições que mudaram (ao menos 1x) para j=0: [58]
+  posições que mudaram (ao menos 1x) para j=0: [7]
+  posições que mudaram (ao menos 1x) para j=1: [36]
+  posições que mudaram (ao menos 1x) para j=2: [65]
 >> Até round 3:
   diferença média (n bits) = 1.0000
   fração diferença média = 0.012500000000018082
   fração diferença mínima = 0.0125
   fração diferença máxima = 0.0125
   número de pares que nunca mudam = 6320
-  posições que mudaram (ao menos 1x) para j=0: [9]
+  posições que mudaram (ao menos 1x) para j=0: [50]
+  posições que mudaram (ao menos 1x) para j=1: [11]
+  posições que mudaram (ao menos 1x) para j=2: [52]
 >> Até round 4:
   diferença média (n bits) = 1.0000
   fração diferença média = 0.012500000000018082
   fração diferença mínima = 0.0125
   fração diferença máxima = 0.0125
   número de pares que nunca mudam = 6320
-  posições que mudaram (ao menos 1x) para j=0: [28]
+  posições que mudaram (ao menos 1x) para j=0: [17]
+  posições que mudaram (ao menos 1x) para j=1: [6]
+  posições que mudaram (ao menos 1x) para j=2: [75]
 >> Até round 5:
   diferença média (n bits) = 1.0000
   fração diferença média = 0.012500000000018082
   fração diferença mínima = 0.0125
   fração diferença máxima = 0.0125
   número de pares que nunca mudam = 6320
-  posições que mudaram (ao menos 1x) para j=0: [19]
+  posições que mudaram (ao menos 1x) para j=0: [20]
+  posições que mudaram (ao menos 1x) para j=1: [21]
+  posições que mudaram (ao menos 1x) para j=2: [22]
 
 ----> EFEITO AVALANCHE para Feistel F07:
 >> Até round 1:
@@ -87,62 +109,78 @@
   fração diferença mínima = 0.0125
   fração diferença máxima = 0.025
   número de pares que nunca mudam = 6280
-  posições que mudaram (ao menos 1x) para j=0: [79]
+  posições que mudaram (ao menos 1x) para j=0: [49, 0]
+  posições que mudaram (ao menos 1x) para j=1: [66, 1]
+  posições que mudaram (ao menos 1x) para j=2: [43, 2]
 >> Até round 2:
   diferença média (n bits) = 2.5000
   fração diferença média = 0.03125000000000005
   fração diferença mínima = 0.025
   fração diferença máxima = 0.0375
   número de pares que nunca mudam = 6200
-  posições que mudaram (ao menos 1x) para j=0: [72, 39]
+  posições que mudaram (ao menos 1x) para j=0: [42, 40, 9]
+  posições que mudaram (ao menos 1x) para j=1: [51, 41, 26]
+  posições que mudaram (ao menos 1x) para j=2: [60, 42, 3]
 >> Até round 3:
   diferença média (n bits) = 3.0000
   fração diferença média = 0.03749999999994557
   fração diferença mínima = 0.0375
   fração diferença máxima = 0.0375
   número de pares que nunca mudam = 6160
-  posições que mudaram (ao menos 1x) para j=0: [79, 73, 32]
+  posições que mudaram (ao menos 1x) para j=0: [43, 2, 0]
+  posições que mudaram (ao menos 1x) para j=1: [76, 11, 1]
+  posições que mudaram (ao menos 1x) para j=2: [69, 20, 2]
 >> Até round 4:
   diferença média (n bits) = 3.5000
   fração diferença média = 0.04374999999999848
   fração diferença mínima = 0.0375
   fração diferença máxima = 0.05
   número de pares que nunca mudam = 6120
-  posições que mudaram (ao menos 1x) para j=0: [50, 39, 33]
+  posições que mudaram (ao menos 1x) para j=0: [60, 42, 40, 3]
+  posições que mudaram (ao menos 1x) para j=1: [61, 51, 41, 36]
+  posições que mudaram (ao menos 1x) para j=2: [62, 60, 42, 29]
 >> Até round 5:
   diferença média (n bits) = 4.5000
   fração diferença média = 0.05625000000004226
   fração diferença mínima = 0.05
   fração diferença máxima = 0.0625
   número de pares que nunca mudam = 6040
-  posições que mudaram (ao menos 1x) para j=0: [79, 73, 59, 10]
+  posições que mudaram (ao menos 1x) para j=0: [69, 49, 20, 2, 0]
+  posições que mudaram (ao menos 1x) para j=1: [66, 46, 21, 11, 1]
+  posições que mudaram (ao menos 1x) para j=2: [63, 43, 22, 20, 2]
 >> Até round 6:
   diferença média (n bits) = 5.0000
   fração diferença média = 0.0625
   fração diferença mínima = 0.0625
   fração diferença máxima = 0.0625
   número de pares que nunca mudam = 6000
-  posições que mudaram (ao menos 1x) para j=0: [72, 52, 39, 33, 19]
+  posições que mudaram (ao menos 1x) para j=0: [62, 60, 40, 29, 9]
+  posições que mudaram (ao menos 1x) para j=1: [71, 61, 41, 26, 6]
+  posições que mudaram (ao menos 1x) para j=2: [62, 42, 40, 23, 3]
 >> Até round 7:
   diferença média (n bits) = 4.5000
   fração diferença média = 0.05625000000004223
   fração diferença mínima = 0.05
   fração diferença máxima = 0.0625
   número de pares que nunca mudam = 6040
-  posições que mudaram (ao menos 1x) para j=0: [79, 59, 53, 32, 12]
+  posições que mudaram (ao menos 1x) para j=0: [63, 22, 20, 0]
+  posições que mudaram (ao menos 1x) para j=1: [56, 31, 21, 1]
+  posições que mudaram (ao menos 1x) para j=2: [49, 22, 2, 0]
 >> Até round 8:
   diferença média (n bits) = 3.5000
   fração diferença média = 0.043749999999998554
   fração diferença mínima = 0.0375
   fração diferença máxima = 0.05
   número de pares que nunca mudam = 6120
-  posições que mudaram (ao menos 1x) para j=0: [70, 39, 19, 13]
+  posições que mudaram (ao menos 1x) para j=0: [62, 60, 23]
+  posições que mudaram (ao menos 1x) para j=1: [71, 61, 16]
+  posições que mudaram (ao menos 1x) para j=2: [62, 40, 9]
 >> Até round 9:
   diferença média (n bits) = 3.0000
   fração diferença média = 0.03749999999994557
   fração diferença mínima = 0.0375
   fração diferença máxima = 0.0375
   número de pares que nunca mudam = 6160
-  posições que mudaram (ao menos 1x) para j=0: [59, 53, 30]
-
-==================================================
+  posições que mudaram (ao menos 1x) para j=0: [69, 22, 20]
+  posições que mudaram (ao menos 1x) para j=1: [46, 31, 21]
+  posições que mudaram (ao menos 1x) para j=2: [63, 22, 0]
